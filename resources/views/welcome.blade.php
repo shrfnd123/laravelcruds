@@ -13,15 +13,24 @@
        
 <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
     </head>
-    <body class="antialiased">  <div class="bgimg"><div id="app">
-   
-      
-       </div>
-       
-</div>
-<script src="{{ asset('js/app.js') }}"></script>
+    <body class="antialiased">  <div class="bgimg">
 
-    
+<div class="topright">
+                 <div class="topnav">
+                   <a href="Login"> Login</a>
+                   <a href="/Register"> Register</a>
+                                   
+                             </div>
+                         
+                </div>
+                <div class="middle">
+                  <h1>COMING SOON</h1>
+                 <hr></hr>
+                  <p>35 days left</p>
+                  </div> 
+
+           
+</div>
     </body>
   
 </html>

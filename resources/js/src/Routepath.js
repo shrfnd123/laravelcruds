@@ -1,25 +1,19 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import { Route, BrowserRouter, Switch, Router, Link } from "react-router-dom";
-import Welcome from "../components/Welcome";
+import Welcome from "./components/Welcome";
 
 const Routepath = () => {
     return (
-        <Router className="Route_container">
+        <BrowserRouter >
             <Switch>
-                <Route exact path="/">
-                <Welcome />
+                <Route exact path="/" component={Welcome}>
                 </Route>
-                <Route  path="/login">
-                <Login />
-                </Route>
-                <Route  path="/register">
-                <Register />
-                </Route>
+              
             </Switch>
-        </Router>
+        </BrowserRouter>
     );
     };
-    export default Routepath;
+   export default Routepath;
   
-ReactDOM.render(<Welcome />, document.getElementById('app'))
+ReactDOM.render(<Routepath />, document.getElementById('app'))
