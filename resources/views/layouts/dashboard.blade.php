@@ -12,14 +12,14 @@
         <!-- Styles -->
 <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
 <link href="{{ asset('css/modal.css') }}" rel="stylesheet">
-
-    </head>
+<link href="{{ asset('css/reg.css') }}" rel="stylesheet">
+   </head>
     <body class="antialiased">  <div class="bgimg">
 
 <div class="topright">
                  <div class="topnav">
                  <a href="#" id="Login" >Login</a>
-                 <a href="#" id="{{ route('signup') }}" >Register</a>
+                 <a href="{{ route('signup') }}"  >Register</a>
                                    
                              </div>
                          
@@ -127,21 +127,6 @@ window.onclick = function(event) {
   }
 }
 </script>
-<script src="{{ asset('bootstrap/plugins/jquery/jquery.min.js') }}"></script>
-<!-- Bootstrap 4 -->
-<script src="{{ asset('bootstrap/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-<!-- DataTables -->
-<script src="{{ asset('bootstrap/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('bootstrap/plugins/datatables/dataTables.bootstrap4.min.js') }}"></script>
-<!-- SlimScroll -->
-<script src="{{ asset('bootstrap/plugins/slimScroll/jquery.slimscroll.min.js') }}"></script>
-<!-- FastClick -->
-<script src="{{ asset('bootstrap/plugins/fastclick/fastclick.js') }}"></script>
-<!-- AdminLTE App -->
-<script src="{{ asset('bootstrap/dist/js/adminlte.min.js') }}"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="{{ asset('bootstrap/dist/js/demo.js') }}"></script>
-<!-- page script -->
-<script
+
 </body>
 </html>
