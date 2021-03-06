@@ -46,14 +46,17 @@
         </tr></thead>
         <thead>
         <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
         
+        <td>{{$sql->FirstName}}</td>
+        <td>{{$sql->MiddleName}}</td>
+        <td>{{$sql->LastName}}</td>
+        <td>{{$sql->Address}}</td>
+        <td>{{$sql->Gender}}</td>
+        <td>{{$sql->ContactNumber}}</td>
+        <td><h4><a onclick="edit_user(this)" href="javascript:;" users_id="{{$sql->employee_id}}" FirstName="{{$sql->FirstName}}" MiddleName="{{$sql->MiddleName}}" 
+        LastName="{{$sql->LastName}}" Address="{{$sql->Address}}" ContactNumber="{{$sql->ContactNumber}}"
+        class="fa fa-edit" aria-hidden="true"></a>&nbsp;&nbsp;&nbsp;<i class="fa fa-trash" aria-hidden="true"></i></h4></td>
+  
         </tr></thead>
         </table>
         </div>
@@ -62,7 +65,7 @@
         <!-- /.card-footer-->
       </div>
       <!-- /.card -->
-
+     
     </section>
     <!-- /.content -->
     @endsection

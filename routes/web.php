@@ -28,3 +28,4 @@ Route::get('/admindashboard', [App\Http\Controllers\AdminController::class, 'adm
 Route::get('/addemployee', [App\Http\Controllers\AdminController::class, 'addemployee'])->name('addemployee');
 Route::post('/createemployee', [App\Http\Controllers\AdminController::class, 'createemployee'])->name('createemployee');
 Route::get('/listofemployee', [App\Http\Controllers\AdminController::class, 'listofemployee'])->name('listofemployee');
+Route::post('/updateemployee', [App\Http\Controllers\AdminController::class, 'updateemployee'])->name('updateemployee');

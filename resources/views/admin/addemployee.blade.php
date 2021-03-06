@@ -140,6 +140,21 @@
                                   </div>
                                     <!-- /input-group -->
                                       </div>
+                                      <div class="col-lg-4">
+                     <label for="exampleInputEmail1">User Type</label>
+                        <div class="form-group">
+                           <div class="input-group-prepend"></div>
+                              <select class="form-control select2" name="usertype" style="width: 100%;" required>
+                                 <option selected="selected"></option>
+                                    
+                                       <option value="2">Employee</option>
+                                          <option value="3">Student</option>
+                                             </select> 
+                                                </div>
+                                                  <!-- /input-group -->
+                                                    </div>
+    
+                                                  <!-- /.col-lg-6 -->
                                       
                            
                              

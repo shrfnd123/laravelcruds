@@ -19,14 +19,15 @@ class CreateTableUsers extends Migration
             $table->integer('user_type');
             $table->string('username');
             $table ->unsignedBigInteger('employee_id')->unsigned();
+            $table ->unsignedBigInteger('student_id')->unsigned();
             $table->foreign('employee_id')->references('employee_id')->on('employee');
+            $table->foreign('student_id')->references('student_id')->on('student');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *
@@ -34,8 +35,6 @@ class CreateTableUsers extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('table_users');
     }
 }

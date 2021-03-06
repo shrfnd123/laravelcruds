@@ -55,20 +55,31 @@ class UserController extends Controller
     {
       return view('signin');
     }
-    public function signin(Request $request){
+  public function signin(Request $request){
         $email = $request['email'];
         $password = $request['password'];
         // dd($email);
 
-        $sql = DB::table('users')
-        ->where('email',$email)
+        $sql = DB::table('users')->
+        join('employee', 'employee.employee_id', '=', 'users.employee_id')->
+        select('users.users_id','users.email','users.password','users.username','users.employee_id','employee.employee_id','employee.FirstName','employee.MiddleName','employee.LastName')   
+        ->where('users.email',$email)
         ->first();
        $check = Hash::check($password, $sql->password);
         //dd($check);
-        if(Hash::check($password, $sql->password)){
-        $request->session()->put('LoggedUser', $sql->users_id);
+        if(Hash::check($password, $sql->password) || $sql->email == $email ){
+           
+        $request->session()->put('users_id', $sql->users_id);
+        $request->session()->put('username',$sql->username);
+        $request->session()->put('email', $sql->email);
+        $request->session()->put('password',$sql->password);
+         $request->session()->put('FirstName', $sql->FirstName);
+          $request->session()->put('MiddleName', $sql->MiddleName);
+        $request->session()->put('LastName', $sql->LastName);
+     $request->session()->put('LoggedUser',true);
+         
         return redirect('admindashboard');
-        }elseif($check == false || $sql = false){
+        }else{
             return 'hello';
         }
 

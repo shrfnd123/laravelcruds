@@ -42,18 +42,13 @@
         <th>Address</th>
         <th>Gender</th>
         <th>Contact Number</th>
-        <th>Action</th>
+       
         </tr></thead>
         <thead>
         <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
         
+        
+  
         </tr></thead>
         </table>
         </div>
@@ -62,7 +57,7 @@
         <!-- /.card-footer-->
       </div>
       <!-- /.card -->
-
+     
     </section>
     <!-- /.content -->
     @endsection
