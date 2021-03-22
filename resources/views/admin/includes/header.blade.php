@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | Blank Page</title>
+  <title>JMM</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -46,7 +46,7 @@
            alt="AdminLTE Logo"
            class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+      <span class="brand-text font-weight-light">JMM</span>
     </a>
 
     <!-- Sidebar -->
@@ -104,21 +104,21 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fa fa-dashboard"></i>
               <p>
-              Manage Teacher
+              Manage Student
                 <i class="right fa fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ route('addemployee') }}" class="nav-link">
+                <a href="{{ route('addstudent') }}" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Add Teacher</p>
+                  <p>Add Student</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('listofemployee') }}" class="nav-link">
+                <a href="{{ route('listofstudent') }}" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
-                  <p>List of Teacher</p>
+                  <p>List of Student</p>
                 </a>
               </li>
          
@@ -283,7 +283,8 @@ $(".update_employee").click(function(e){
         error:function(data){
           console.log(data); 
         }
-       });
+       }); 
+       
 })
 </script>
 </body>

@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+Route::get('/recaptcha', function () {
+    return view('recaptcha');
+});
 
 Auth::routes();
 
@@ -26,6 +29,8 @@ Route::get('/login', [App\Http\Controllers\UserController::class, 'login'])->nam
 Route::post('/signin', [App\Http\Controllers\UserController::class, 'signin'])->name('signin');
 Route::get('/admindashboard', [App\Http\Controllers\AdminController::class, 'admindashboard']);
 Route::get('/addemployee', [App\Http\Controllers\AdminController::class, 'addemployee'])->name('addemployee');
+Route::get('/addstudent', [App\Http\Controllers\AdminController::class, 'addstudent'])->name('addstudent');
 Route::post('/createemployee', [App\Http\Controllers\AdminController::class, 'createemployee'])->name('createemployee');
 Route::get('/listofemployee', [App\Http\Controllers\AdminController::class, 'listofemployee'])->name('listofemployee');
+Route::get('/listofstudent', [App\Http\Controllers\AdminController::class, 'listofstudent'])->name('listofstudent');
 Route::post('/updateemployee', [App\Http\Controllers\AdminController::class, 'updateemployee'])->name('updateemployee');

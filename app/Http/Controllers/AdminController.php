@@ -27,13 +27,17 @@ class AdminController extends Controller
         return view('admin.index',compact('sql'));
       }
       public function addemployee(){
-       
+         
           return view('admin.addemployee');
       }
+      public function addstudent(){
+         
+        return view('admin.addstudent');
+    }
       public function createemployee(Request $request){
         $user_type = $request['usertype'];
        
-        // dd($user_type);
+      
 
         $data = [
             'fname' => $request['FirstName'],
@@ -49,25 +53,26 @@ class AdminController extends Controller
         $studentid = DB::select("show table status like 'student' ");
         $student_id=$id[0]->Auto_increment;
       $addemployee = EmployeeModel::AddEmployeeDetails($data);
-      if($user_type == '2'){
+      if($user_type == '1'){
         $student = "0";
         $pass = Hash::make($request->password);
-        // $pass = input($pass1);
+       
         $data2 =[
             'email' => $request['email'],
-        'user_type' => $request['usertype'],
+        'user_type' =>  $request['usertype'],
         'username' => $request['username'],
         'password' =>Hash::make($request['password']),
         'employee_id' => $employee_id,
         'student_id' => $student
     
       
-        // dd($data2);
+       
            ];
-    //  dd($data2);
+  
     UserModel::CreateAccount($data2);
-   }else{
-$employ = "0";
+   }
+   else{
+    $employ = "0";
     $data2 =[
       'email' => $request['email'],
   'user_type' => $request['usertype'],
@@ -79,22 +84,30 @@ $employ = "0";
 
  
      ];
-    //  dd($data2);
-UserModel::CreateAccount($data2);
+  
+    UserModel::CreateAccount($data2);
+    return redirect();
    }
-    
-      // $createaccount =  UserModel::ListofEmployee();
-
       }
       public function listofemployee(){
         $sql = DB::table('users')->
         join('employee', 'employee.employee_id', '=', 'users.employee_id')->
         select('*')   
-        ->where('user_type','!=',"1")
+        ->where('user_type','=',"2")
         ->first();
       
-        // dd($sql);
+       
       return view('admin.employeelist',compact('sql'));
+      }
+      public function listofstudent(){
+        $sql = DB::table('users')->
+        join('employee', 'employee.employee_id', '=', 'users.student_id')->
+        select('*')   
+        ->where('user_type','=',"3")
+        ->first();
+      
+       
+      return view('admin.studentlist',compact('sql'));
       }
       public function updateemployee(Request $request){
 
