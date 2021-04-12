@@ -124,6 +124,30 @@
          
             </ul>
           </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-dashboard"></i>
+              <p>
+              Manage Subject
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('addstudent') }}" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Add Subject</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('listofstudent') }}" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>List of Subject</p>
+                </a>
+              </li>
+         
+            </ul>
+          </li>
            
         </ul>
       </nav>
